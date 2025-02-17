@@ -224,9 +224,9 @@ body {
 /* Footer */
 #footerwrap {
     color: $color_footer_content;
-    margin-top: 100px;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    margin-top: 0px;
+    padding-top: 20px;
+    padding-bottom: 30px;
     @include noissue{
         background: $color_secondary;
     }
@@ -352,7 +352,7 @@ body {
     padding: 8px;
     border: 1px solid #e3e3e3;
     margin-top: 20px;
-    margin-right: 10px;
+    margin-right: 30vw;
     max-width: 240px;
     height: 30px;
     font-size: 16px;
