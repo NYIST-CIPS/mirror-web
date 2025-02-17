@@ -29,17 +29,32 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				
+				<div class="row" style="
+				display: flex;
+				">
 					{% else %}
-					<div class="col-{% if page.legacy %}xs{% else %}md{% endif %}-8 table-responsive" id="mirror-list">
-						<div class="row">
-							<h3 id="mirror-title">{% fa_svg fas.fa-cube %} 镜像列表 </h3>
-							{% unless page.legacy %}
-							<input type="search" v-model.trim="filter" id="search" ref="search" placeholder="按 / 搜索" autocomplete="off">
-							{% endunless %}
-						</div>
+					<div class="row"style="
+					padding-left: 28px;
+				">
+						<h3 id="mirror-title">{% fa_svg fas.fa-cube %} 镜像列表 </h3>
+						{% unless page.legacy %}
+						<input type="search" v-model.trim="filter" id="search" ref="search" placeholder="按 / 搜索" autocomplete="off">
+						{% endunless %}
+					</div>
+					<div class="col-{% if page.legacy %}xs{% else %}md{% endif %}-8 table-responsive" id="mirror-list"style="
+					height: 800px; /* or any desired height */
+					overflow-y: auto;
+				">
+						
 						<table class="table" v-if="mirrorList.length">
-							<thead>
+							<thead style="
+							position: sticky;
+							top: 0;
+							/* background-color: #f8f8f8; */
+							z-index: 10;
+							backdrop-filter: blur(2px);
+							">
 								<tr class="row">
 									<th class="col-{% if page.legacy %}xs{% else %}sm{% endif %}-8">Name</th>
 									<th class="col-{% if page.legacy %}xs{% else %}sm{% endif %}-4">Last Update</th>
@@ -98,8 +113,8 @@
 					</div>
 					{% endif %}
 					{% unless site.issue %}
-					<div class="col-{% if page.legacy %}xs{% else %}md{% endif %}-4">
-						<div class="spacing hidden-xs"></div>
+					<div class="col-{% if page.legacy %}xs{% else %}md{% endif %}-4"style="{% if page.legacy %} {% else %}padding-left: 50px;{% endif %}">
+						
 						<div id="wizard">
 						</div>
 					{% endunless %}

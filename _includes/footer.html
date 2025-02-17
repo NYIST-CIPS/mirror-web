@@ -2,7 +2,11 @@
 {% unless page.legacy and footer-i == 1 %}
 <div id="footerwrap" class="tuna-foot-{{ footer-i }}"{% if page.legacy %} style="visibility: visible;"{% endif %}>
   <div class="container">
-    <div class="row">
+    <div class="row"style="
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center;     /* 垂直居中 */
+">
       <div class="col-lg-4 col-md-4{% if page.legacy %} col-xs-4{% endif %}">
         <p class="thuhidden">本站{% if site.operator %}由{{ site.operator }}支持创办，{% endif %}由南阳理工学院 CIPS 协会运行维护。</p>
         <p>本站采用清华大学 TUNA 镜像站网页搭建。</p>
@@ -12,7 +16,7 @@
         <p class="thuhidden">{{ site.footnote }}</p>Z
         {% endif %}
       </div>
-      <div class="col-lg-4 col-md-4{% if page.legacy %} col-xs-4{% endif %}">
+      <div class="col-lg-4 col-md-4{% if page.legacy %} col-xs-4{% endif %}"style="width: 25%;">
         <h4>Contact Us</h4>
         <div class="thuhidden">
           <ul class="social">
