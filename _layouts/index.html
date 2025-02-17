@@ -7,7 +7,6 @@
 		{% endunless %}
 		{% include nav.html %}
 		<div id="mirrors">
-			<div class="spacing hidden-xs"></div>
 			<div class="container">
 				<div class="row">
 					{% if site.issue %}
@@ -29,7 +28,6 @@
 						</div>
 					</div>
 				</div>
-				
 				<div class="row" style="
 				display: flex;
 				">
@@ -114,7 +112,6 @@
 					{% endif %}
 					{% unless site.issue %}
 					<div class="col-{% if page.legacy %}xs{% else %}md{% endif %}-4"style="{% if page.legacy %} {% else %}padding-left: 50px;{% endif %}">
-						
 						<div id="wizard">
 						</div>
 					{% endunless %}
