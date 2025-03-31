@@ -11,7 +11,7 @@
 			 <div class="timejump-modal" id="march27-modal">
 				<h2>🤗 我们更新啦！</h2>
 				<h4>欢迎来到镜像站！在这里，一切问题都会"原样反射"</h4>
-				<button onclick="handleMarch27()">立即体验</button>
+				<button onclick="handleApril()">立即体验</button>
 			</div>
 		
 			<div class="timejump-modal" id="time-error-modal">
@@ -253,7 +253,7 @@
 
 		// 日期检测逻辑
 		const today = new Date();
-		const isMarch27 = today.getMonth() === 3 && today.getDate() === 1;
+		const isApril = today.getMonth() === 4 && today.getDate() === 1;
 
 		// 生成随机动画参数
 		function getRandomParams() {
@@ -277,8 +277,8 @@
 			};
 		}
 
-		// 动态加载愚人节样式（仅3月27日时加载）
-		if (isMarch27) {
+		// 动态加载愚人节样式
+		if (isApril) {
 			const style = document.createElement('style');
 			style.id = 'april-fools-style';
 			style.textContent = `
