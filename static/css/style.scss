@@ -566,3 +566,69 @@ svg.icon {
   color: inherit;
   background-color: transparent;
 }
+
+/* 通用弹窗样式 */
+.timejump-modal {
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    backdrop-filter: blur(10px);
+    padding: 60px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    z-index: 9999;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    pointer-events: none;
+    width: 430px;
+    height: 300px;
+    display: grid;
+    place-items: center;     /* 同时水平垂直居中 */
+    height: 300px;
+}
+
+.timejump-modal::before {
+    content: '';
+    position: absolute;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 221, 221, 0.459),
+      rgba(255, 246, 237, 0.623)
+    );
+    pointer-events: none; /* 确保内容可交互 */
+    z-index: -1; /* 置于内容下方 */
+    
+  }
+
+
+.timejump-modal.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.timejump-modal h2 {
+    color: #b74c4c;
+    margin: 0 0 15px;
+}
+
+.timejump-modal button {
+    background-color: #b74c4c;
+    border-color: #c67373;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.timejump-modal button:hover {
+    transform: scale(1.1);
+}
