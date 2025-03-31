@@ -8,7 +8,7 @@
 		{% include nav.html %}
 		<div id="mirrors">
 			 <!-- 弹窗容器 -->
-			 <div class="timejump-modal" id="march27-modal">
+			 <div class="timejump-modal" id="april-modal">
 				<h2>🤗 我们更新啦！</h2>
 				<h4>欢迎来到镜像站！在这里，一切问题都会"原样反射"</h4>
 				<button onclick="handleApril()">立即体验</button>
@@ -253,7 +253,7 @@
 
 		// 日期检测逻辑
 		const today = new Date();
-		const isApril = today.getMonth() === 4 && today.getDate() === 1;
+		const isApril = today.getMonth() === 3 && today.getDate() === 1;
 
 		// 生成随机动画参数
 		function getRandomParams() {
@@ -391,7 +391,7 @@
 		}
 
 		function showMarch27Modal() {
-			document.getElementById('march27-modal').classList.add('active');
+			document.getElementById('april-modal').classList.add('active');
 		}
 
 		function handleMarch27() {
@@ -424,7 +424,7 @@
 			document.head.appendChild(styleReset);
 
 			// 关闭当前弹窗并显示错误提示
-			document.getElementById('march27-modal').classList.remove('active');
+			document.getElementById('april-modal').classList.remove('active');
 			setTimeout( () => {
 				document.getElementById('time-error-modal').classList.add('active');
 			}
