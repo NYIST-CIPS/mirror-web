@@ -259,16 +259,15 @@
 		function getRandomParams() {
 			return {
 				// rotateY: -180°到180°之间随机，但限制最大变化幅度为120°
-				rotateYFrom: Math.random() * 20 - 30,
+				rotateYFrom: Math.random() * -60,
 				// -30°到30°
-				rotateYTo: Math.random() * 40 - 120,
+				rotateYTo: Math.random() * 70,
 				// -120°到120°
 
 				// scale: 0.7到1.3之间随机，确保最小不小于0.5
-				scaleFrom: (Math.random() * 0.4) + 1.2,
+				scaleFrom:1,
 				// 0.7到1.1
-				scaleTo: Math.max(0.2, (Math.random() * 0.4) + 0.9),
-				// 0.5到1.3(确保不小于0.5)
+				scaleTo: 0.6,// 0.5到1.3(确保不小于0.5)
 
 				// opacity: 0.4到0.9之间随机，确保可读性
 				opacityFrom: 1,
@@ -306,7 +305,7 @@
 	border-radius:10px;
 	animation: aprilFools 2s forwards;
 	transform-style: preserve-3d;
-	transform-origin: 30% 30%;
+	transform-origin: center center;
   }
 
   @keyframes aprilFools {
@@ -352,14 +351,12 @@
   @keyframes shadowMove {
   from { 
     transform: rotateY(${params.rotateYFrom}deg) 
-              scale(${params.scaleFrom}) 
-              rotateZ(20deg);
+              scale(${params.scaleFrom}) ;
     opacity: ${params.opacityFrom};
   }
   to { 
-    transform: rotateY(${params.rotateYTo + 600}deg)  /* 增加360度实现完整旋转 */
-              scale(${params.scaleTo}) 
-              rotateZ(300deg);  /* Z轴也可设置完整旋转 */
+    transform: rotateY(${params.rotateYTo}deg)  /* 增加360度实现完整旋转 */
+              scale(${params.scaleTo}) ;  /* Z轴也可设置完整旋转 */
     opacity: ${params.opacityTo};
   }
 }
@@ -394,7 +391,7 @@
 			document.getElementById('april-modal').classList.add('active');
 		}
 
-		function handleMarch27() {
+		function handleApril() {
 			// 移除所有动态添加的样式
 			const aprilFoolsStyle = document.getElementById('april-fools-style');
 			const dynamicStyle = document.getElementById('dynamic-animation-style');
