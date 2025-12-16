@@ -527,6 +527,7 @@ unlisted_mirrors:
 
 force_redirect_help_mirrors:
   - AOSP
+  - aports
   - lineageOS
   - homebrew
   - linux.git
